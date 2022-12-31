@@ -470,7 +470,7 @@ Configure SELinux Policies
 
 __Install MySQL on your DB Server EC2__
 
-Update th repository
+Update the repository
 
 ```$ sudo yum update -y```
 
@@ -548,6 +548,14 @@ Edit the __"/var/www/html/wp-config.php"__ to connect to dataabase.
 Disable the apache configuration(i.e renaming to backup)
 
 ```$ mv /etc/httpd/conf.d/welcome.conf /etc/httpd/conf.d/welcome.conf_backup```
+
+Open __"/etc/my.cnf"__ and edit the file. Add [mysqld] and __"bind-address=0.0.0.0"__.
+
+```$ sudo vi /etc/my.cnf```
+
+![image](./images/my-cnf.PNG)
+
+__N/B:__ In setting up our mysql configuration, we put the access as __"%"__ whch shows we want to connect from anywhere. If we have set a particular IP address of webserver we will put in the same IP address in the __bind-address__.
 
 Enable TCP __port 80__ in Inbound Rules configuration for your Web Server EC2 (enable from everywhere __0.0.0.0/0__ or from your workstation’s IP)
 
