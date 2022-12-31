@@ -478,6 +478,8 @@ Update th repository
 
 Install __mysql-server__
 
+```$ sudo yum install mysql-server```
+
 ![image](./images/db-install-mysql-server.PNG)
 
 Verify that the service is up and running, if it is not running, restart the service and enable it so it will be running even after reboot:
